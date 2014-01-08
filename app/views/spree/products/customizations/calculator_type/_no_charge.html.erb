@@ -1,0 +1,11 @@
+<% cust_dom_id = "no_charge_input_#{product_customization_type.customizable_product_options.first.id}" %>
+
+<%= field_set_tag product_customization_type.presentation do %>
+<% option = product_customization_type.customizable_product_options.first %>
+<label for="<%= cust_dom_id %>">
+  <%= text_field_tag "#{param_prefix}[#{product_customization_type.customizable_product_options.first.id}]",
+  "", :id => cust_dom_id, :class=>"customization" %>
+  <%= product_customization_type.description %>
+</label>
+<%= hidden_field_tag "customization_price", "0", :class => "customization_price" %>
+<%- end -%>

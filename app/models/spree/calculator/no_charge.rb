@@ -1,9 +1,9 @@
-require_dependency 'spree/calculator'
+# require_dependency 'spree/calculator'
 
 module Spree
   class Calculator::NoCharge < Calculator
     def self.description
-      "This customization has no charge"
+      "No charge: this customization has no charge"
     end
 
     def self.register
@@ -12,8 +12,8 @@ module Spree
     end
 
     def create_options
-      # This calculator knows that it needs one CustomizableOption named amount
       [
+        CustomizableProductOption.create(:name=>"no_carge_option", :presentation=>"No charge presentation")
       ]
     end
 
