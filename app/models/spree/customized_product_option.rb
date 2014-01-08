@@ -3,7 +3,7 @@ module Spree
   # the customization_type_view. Those values are saved in this class
   class CustomizedProductOption < ActiveRecord::Base
     belongs_to :product_customization
-    belongs_to :customizable_product_option
+    belongs_to :customizable_product_option # FIXME probabilmente bisogna aggiungere :dependent => :destroy (Daniele)
 
     mount_uploader :customization_image, CustomizationImageUploader
 

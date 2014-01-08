@@ -34,6 +34,7 @@ module SpreeFlexiVariants
       initializer "spree.register.calculators" do |app|
         app.config.spree.calculators.add_class('product_customization_types')
         app.config.spree.calculators.product_customization_types = [
+                                                                    Spree::Calculator::NoCharge,
                                                                     Spree::Calculator::Engraving,
                                                                     Spree::Calculator::AmountTimesConstant,
                                                                     Spree::Calculator::ProductArea,
